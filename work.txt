@@ -1,0 +1,16 @@
+2018.4.11
+大会网站(https://finwisesummit.com)
+	上海站（保留资源）
+	澳门站（保留资源）
+	东京站（保留注释代码）
+代码
+https://github.com/ViewBTC/finwisesummit-com
+
+
+技术栈
+react mobx next.js axios
+
+
+https://github.com/suevalov/next-blog-firestore.git
+
+https://github.com/stefaniepei/react-mobx-ts-ssr.git
