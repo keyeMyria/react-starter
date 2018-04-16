@@ -2,10 +2,13 @@ import React, { PureComponent } from 'react';
 import { Link } from 'react-router-dom';
 import utils from '@/utils'
 import './main.scss';
+import {inject,observer} from 'mobx-react'
 // import api from '@/api'
+@inject("store") @observer
 class Main extends PureComponent {
   constructor(props) {
     super(props);
+    console.log(props,111111111111)
     this.state = {
         username:'',
         password:""
@@ -44,6 +47,7 @@ class Main extends PureComponent {
   render() {
     return (
         <div className="panel-app">
+          <div>username: <span></span>password: <span>f</span></div>
           <input type="text" name="username" value={this.state.username} onChange={this.onChange}/>
           <input type="text" name="password" value={this.state.password} onChange={this.onChange}/>
           <button type="button" onClick={this.doEnroll}>注册</button>

@@ -1,3 +1,8 @@
+company
+
+wifi:dap~XLA^xh5c
+
+
 2018.4.11
 大会网站(https://finwisesummit.com)
 	上海站（保留资源）
@@ -14,3 +19,17 @@ react mobx next.js axios
 https://github.com/suevalov/next-blog-firestore.git
 
 https://github.com/stefaniepei/react-mobx-ts-ssr.git
+
+
+2018.4.12
+联合主办更新
+	|-加入bcua 	logo
+	|-删除 日本扳通协会
+	|-加入蚂蚁区块链联盟
+	|-删除ibca logo
+更新 演讲人信息
+	|-（曾豪 蚂蚁区块链联盟创始人 福建区块链俱乐部发起人）
+媒体协办
+	|-未来财经移至最后香港电视台
+
+2018.4.16

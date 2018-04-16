@@ -20,7 +20,7 @@
     "build-js": "react-app-rewired build",
     "build": "npm-run-all build-css build-js",
     "test": "react-app-rewired test --env=jsdom",
-    "eject": "react-app-rewired eject"
+    "eject": "react-scripts eject"
   },
   "devDependencies": {
     "node-sass": "^4.8.3",
