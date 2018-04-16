@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import utils from '@/utils'
 import './main.scss';
 import {inject,observer} from 'mobx-react'
-// import api from '@/api'111
+// import api from '@/api'
 @inject("store") @observer
 class Main extends PureComponent {
   constructor(props) {
