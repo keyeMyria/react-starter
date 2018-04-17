@@ -99,8 +99,11 @@
   },
   "babel": {
     "presets": [
-      "react-app"
-    ]
+      "react-app",
+      "es2015",
+      "stage-1"
+    ],
+    "plugins": ["transform-decorators-legacy"]
   },
   "eslintConfig": {
     "extends": "react-app"
