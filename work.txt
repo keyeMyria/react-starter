@@ -2,6 +2,10 @@ company
 
 wifi:dap~XLA^xh5c
 
+api
+http://10.10.10.142/swagger-ui.html
+	
+
 
 2018.4.11
 大会网站(https://finwisesummit.com)
@@ -33,3 +37,10 @@ https://github.com/stefaniepei/react-mobx-ts-ssr.git
 	|-未来财经移至最后香港电视台
 
 2018.4.16
+添加i18n国际化语言包
+
+2018.4.16
+计划任务
+工单制作//参考桌面pdf wechatimg39.jpg
+
+官网微调//参考微信聊天记录
