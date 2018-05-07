@@ -4,20 +4,21 @@ import Helmet from "react-helmet";
 import { Provider } from "mobx-react";
 
 import NoMatch from "./views/NoMatch";
-import { Wrapper, Title, Nav, NavLink } from "./components/";
-import Store from "./stores/Store";
+import { Wrapper, Title, Nav, NavLink, EhLogin } from "./components/";
+import Store from "./stores/BaseStore";
 import routes from "./routes";
 
 const title = "Template All The Things";
 const store = new Store();
-store.fetch();
+store.test();
 class App extends Component {
   render() {
     return (
       <Provider store={store}>
         <Router>
           <Wrapper>
-            <Helmet titleTemplate={`%s - ${title}`} />
+            <EhLogin />
+            {/* <Helmet titleTemplate={`%s - ${title}`} />
             <Title>react-starter</Title>
             <Nav>
               {routes.map((route, i) => <NavLink key={i} {...route} />)}
@@ -25,7 +26,7 @@ class App extends Component {
             <Switch>
               {routes.map((route, i) => <Route key={i} {...route} />)}
               <Route component={NoMatch} />
-            </Switch>
+            </Switch> */}
           </Wrapper>
         </Router>
       </Provider>

@@ -8,7 +8,11 @@ class Users extends Component {
     let { users } = this.props.store;
     return (
       <ul>
-        {users.map(user => <div key={user.id}>{user.name} - {user.email}</div>)}
+        {users.map(user => (
+          <div key={user.id}>
+            {user.name} - {user.email}
+          </div>
+        ))}
       </ul>
     );
   }
