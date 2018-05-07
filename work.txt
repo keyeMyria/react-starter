@@ -1,11 +1,75 @@
+private
+pip install Django==2.0.4
+
+next mobx https://github.com/vuldin/next.js/tree/fix-mobx-store-implementation/examples/with-mobx
+
 company
+
+gitflow:http://blog.jobbole.com/76867/
+
+email:tony.zhang@viewfin.com
 
 wifi:dap~XLA^xh5c
 
-api
-http://10.10.10.142/swagger-ui.html
-	
+tradingview
+https://b.aitrade.ga/books/tradingview/book/Symbology.html
 
+产品
+
+
+api
+http://10.10.10.150:8081/swagger-ui.html
+
+git
+git reset --hard HEAD^ 上一个版本
+git reset --hard HEAD^ 上一个版本
+git reset --hard id 回到指定id版本
+
+git reflog 记录你的每一条git命令
+
+git diff HEAD readme.txt 工作区与最新版 的readme对比
+
+git checkout --readme.txt 丢弃工作区的修改
+
+git checkout -b dev 创建并切换dev分支
+
+git checkout -b dev orgin/dev 创建远程orgin/dev分支到本地
+
+git checkout master 切换到master分支
+
+git merge dev 合并dev分支到当前指向分支
+
+git merge --no-ff -m "message" dev 合并dev到当前分支且创建新commit
+
+git reset HEAD readme.txt 丢弃暂存区的修改（然后在丢弃工作区修改）
+
+git rm readme.txt 删除
+
+git remote add origin git@server-name:path/repo-name.git 关联远程库
+
+git push -u origin master 推送到远程，-u代表本地master与远程连接
+	
+git clone url地址   克隆库
+
+git branch 查看当前分支
+
+git branch -d dev 删除dev分支 -D删除未被合并的分支
+
+git branch --set-upstream dev origin/dev 设置本地与远程dev分支连接
+
+git log -graph 分支合并图
+
+git stash 保存当前工作进度
+
+git stash apply 回复工作进度（后跟删除工作进度命令）
+
+git stash drop 删除工作进度
+
+git stash pop 等同以上2条命令
+
+git remote 查看远程信息 -v 更详细的信息
+
+git pull 拉代码（需要先设置本地分支与远程分支连接）
 
 2018.4.11
 大会网站(https://finwisesummit.com)
@@ -24,6 +88,8 @@ https://github.com/suevalov/next-blog-firestore.git
 
 https://github.com/stefaniepei/react-mobx-ts-ssr.git
 
+fast jons
+https://github.com/fastify/fast-json-stringify
 
 2018.4.12
 联合主办更新
@@ -44,3 +110,273 @@ https://github.com/stefaniepei/react-mobx-ts-ssr.git
 工单制作//参考桌面pdf wechatimg39.jpg
 
 官网微调//参考微信聊天记录
+
+遍历对象 => o 
+o 若为对象或数组
+	遍历
+		item
+			事件
+				若为对象
+					key加双引号
+				若为数组
+
+如何转化为一个对象为字符串
+	{a:1,b:2,c:3}
+push
+	'{'
+push
+	'"'
+push
+  'a'
+push
+	'"'
+push
+	':'
+push
+  '1'
+push
+	','
+push
+	'"'
+push
+	'b'
+push
+	'"'
+push
+	'2'
+push
+	','
+push
+	"'"
+push
+	'c'
+push
+	"'"
+push
+	':'
+push
+	'3'
+
+问题
+如何知道push"{"或"}"
+如何知道push":"
+如何知道push":"
+遇到对象或数组怎么办？
+	递归
+
+如何转化一个数组为字符串
+[1,2,3]
+push
+	'['
+push
+	'1'
+push
+	','
+push
+	'2'
+push
+	','
+push
+	'3'
+push
+	']'
+挨个pop拼接字符串
+
+{
+	name: "n",
+	age: 11,
+	addess:{
+		location: "877.11"
+	},
+	arr: [
+		'a'
+	],
+
+	reg: /{0-9}/ 
+
+}
+
+2018.4.17
+工单系统
+
+不充提（既然是分类，文字是什么？）
+	提交问题
+		邮箱（工单反馈发送到此邮箱）
+			事件
+				用户已绑定邮箱
+					显示对勾
+				用户未绑定邮箱
+					显示叉叉
+					显示捆绑邮箱按钮（绑定邮箱界面有么）
+		标题
+			事件
+				当改变
+					限制字数50字符
+					禁止使用空格、特殊字符、数字
+		uid
+			事件
+				当初始化
+					显示用户uid
+		描述
+			事件
+				当改变
+					限制500字符
+					禁止空格
+		提交
+			事件
+				验证成功
+				提交成功
+					跳转到工单列表页
+				验证失败【必填，内容规范】
+					精准提示（输入事件提示）
+				取消
+					跳转到信息列表页
+
+	充提
+		邮箱（同上）
+		uid（同上）
+		问题类型
+		问题子分类（2级联动？）
+		币种名称
+		xx地址(充提都不涉及  怎么显示)
+			事件
+				当问题类型为“充值问题”
+					显示为充值地址（充值地址从哪里获取？）
+				当问题类型为“提币问题”
+					显示为提币地址（提币地址从哪里获取？）
+		订单编号
+		标题
+		问题描述
+		上传图片
+		提交（同上？）
+		取消（同上？）
+	
+	其他问题
+		邮箱（同上？）
+		uid（同上？）
+		问题类型
+		标题
+		问题描述
+		上传图片
+		提交
+		取消
+
+	工单列表
+		列表
+			事件
+				当初始化
+					按时间排序倒叙
+		列表项
+			事件
+				处理中
+					未解决按钮变灰
+					确认解决按钮变灰
+				已反馈
+					未/已解决可点击
+				点击未解决
+					跳转到工单编辑
+				点击确认解决
+					更改状态为已确认（把按钮隐藏）
+
+	接口格式
+
+			
+	
+	git 包
+		添加babel插件
+
+活动官网
+
+
+日常问题
+
+mobx react props 两级联动 不更新
+
+2018 4 25
+
+验证码组件问题解决
+
+发送验证码按钮 禁止有问题
+
+link 跳转有问题
+
+api问题
+获取问题列表分类名称没有
+
+
+缺少获取工单接口
+
+工单列表 分页
+
+验证码有问题
+
+
+//禁止验证码按钮逻辑
+发送开始前 true
+sending ？
+发送结束后 false 
+validateEmail ?
+validateVerify ?
+
+
+星环科技会议
+
+机器学习
+
+
+大数据
+	数据仓库
+		采集/加工/治理/分析/可视化
+		高性能企业数据仓库
+		iot 云实时数据处理系统
+		大规模搜索引擎
+		大规模在线数据存储
+		数据挖掘和分析实验室
+	云产品（强调服务）
+		采集
+		整合
+		存储
+		分析
+		高级分析
+		并发可视化
+			sophon web
+			pilot
+			kibana
+			waterdrop
+	数据库
+		argodb
+		stellardb
+云计算
+
+
+
+自适应
+	弹性
+	珊格
+	浮动
+
+目的
+	解决兼容
+	解决易用性
+	解决布局的点
+		做对齐
+		水平居中
+		右对齐
+		两端对齐
+		未知高度元素居中
+
+自适应
+	pc端
+	移动端
+		dpr
+		rem
+
+
+
+
+//300问题
+Hm_lvt_8df13f2847c7fcfd0a91618f4e5d3954=1523529957; 
+_ga=GA1.1.1198671857.1524033809; 
+Hm_lvt_5c533af518d732b040259ff96bfa83de=1524458531; 
+_gid=GA1.1.496774215.1525227950; 
+locale=zh_cn"
