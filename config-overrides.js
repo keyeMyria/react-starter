@@ -1,30 +1,16 @@
-/**
- * React Starter Kit for Firebase
- * https://github.com/kriasoft/react-firebase-starter
- * Copyright (c) 2015-present Kriasoft | MIT License
- */
+const rewireMobX = require("react-app-rewire-mobx");
 
-module.exports = {
-  babel(config, { target }) {
-    return {
-      ...config,
-      plugins: [
-        ...config.plugins,
-        require.resolve('babel-plugin-relay'),
-        require.resolve('babel-plugin-lodash'),
-      ],
+/* config-overrides.js */
+module.exports = function override(config, env) {
+  if (env === "production") {
+    console.log("⚡ Production build with Preact");
+    config.resolve = {
+      alias: {
+        react: "preact-compat",
+        "react-dom": "preact-compat"
+      }
     };
-  },
-
-  webpack(config, { target }) {
-    if (target === 'node') {
-      return config;
-    }
-
-    if (target === 'browser') {
-      return config;
-    }
-
-    return config;
-  },
+  }
+  config = rewireMobX(config, env);
+  return config;
 };
